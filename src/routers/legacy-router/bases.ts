@@ -1,13 +1,15 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from 'pnc-sdk-core';
 
 import {
   BTC_BNB,
   BUSD_BNB,
+  CNYT_PNC,
   DAI_AVAX,
   DAI_BNB,
   DAI_MAINNET,
   DAI_UNICHAIN,
+  FLCT_PNC,
   ITokenProvider,
   USDB_BLAST,
   USDCE_ZKSYNC,
@@ -19,6 +21,7 @@ import {
   USDC_SONEIUM,
   USDC_UNICHAIN,
   USDC_UNICHAIN_SEPOLIA,
+  USDK_PNC,
   USDC_WORLDCHAIN,
   USDC_ZKSYNC,
   USDT_BNB,
@@ -119,6 +122,12 @@ export const BASES_TO_CHECK_TRADES_AGAINST = (
     [ChainId.SONEIUM]: [
       WRAPPED_NATIVE_CURRENCY[ChainId.SONEIUM]!,
       USDC_SONEIUM,
+    ],
+    [ChainId.PNC]: [
+      WRAPPED_NATIVE_CURRENCY[ChainId.PNC]!,
+      USDK_PNC,
+      CNYT_PNC,
+      FLCT_PNC,
     ],
   };
 };

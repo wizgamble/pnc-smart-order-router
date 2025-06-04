@@ -3,7 +3,7 @@ import {
   ChainId,
   CurrencyAmount as CurrencyAmountRaw,
   Token,
-} from '@uniswap/sdk-core';
+} from 'pnc-sdk-core';
 import { Pair } from '@uniswap/v2-sdk';
 import { Pool } from '@uniswap/v3-sdk';
 
@@ -23,6 +23,7 @@ import {
   DAI_SEPOLIA,
   DAI_UNICHAIN,
   DAI_ZKSYNC,
+  FLCT_PNC,
   USDB_BLAST,
   USDCE_ZKSYNC,
   USDC_ARBITRUM,
@@ -55,6 +56,7 @@ import {
   USDC_WORLDCHAIN,
   USDC_WORMHOLE_CELO,
   USDC_ZKSYNC,
+  USDK_PNC,
   USDC_ZORA,
   USDT_ARBITRUM,
   USDT_BNB,
@@ -65,6 +67,7 @@ import {
   USDT_OPTIMISM_GOERLI,
   USDT_OPTIMISM_SEPOLIA,
   WBTC_GOERLI,
+  CNYT_PNC,
 } from '../../../providers/token-provider';
 import { IV2PoolProvider } from '../../../providers/v2/pool-provider';
 import {
@@ -135,6 +138,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.BASE_SEPOLIA]: [USDC_BASE_SEPOLIA],
   [ChainId.UNICHAIN]: [DAI_UNICHAIN, USDC_UNICHAIN],
   [ChainId.SONEIUM]: [USDC_SONEIUM],
+  [ChainId.PNC]: [FLCT_PNC, CNYT_PNC, USDK_PNC],
 };
 
 export type L1ToL2GasCosts = {

@@ -1,5 +1,5 @@
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Currency, Percent } from '@uniswap/sdk-core';
+import { ChainId, Currency, Percent } from 'pnc-sdk-core';
 import { Pair } from '@uniswap/v2-sdk';
 import { Pool as V3Pool } from '@uniswap/v3-sdk';
 import { Pool as V4Pool } from '@uniswap/v4-sdk';
@@ -16,6 +16,7 @@ import { V3_CORE_FACTORY_ADDRESSES } from './addresses';
 import { TPool } from '@uniswap/router-sdk';
 import { CurrencyAmount, V4_ETH_WETH_FAKE_POOL } from '.';
 import { CachedRoutes } from '../providers';
+import { PNCChain } from '../config';
 
 export const routeToTokens = (route: SupportedRoutes): Currency[] => {
   switch (route.protocol) {
@@ -58,7 +59,7 @@ export const poolToString = (pool: TPool): string => {
       pool.token0,
       pool.token1,
       pool.fee,
-      undefined,
+      PNCChain.initCodeHash,
       V3_CORE_FACTORY_ADDRESSES[pool.chainId]
     )}]`;
   } else if (pool instanceof Pair) {
@@ -87,7 +88,7 @@ export const routeToString = (route: SupportedRoutes): string => {
         pool.token0,
         pool.token1,
         pool.fee,
-        undefined,
+        PNCChain.initCodeHash,
         V3_CORE_FACTORY_ADDRESSES[pool.chainId]
       )}]`;
     } else if (pool instanceof V4Pool) {

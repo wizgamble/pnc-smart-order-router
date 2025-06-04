@@ -6,7 +6,7 @@ import {
   Percent,
   Token,
   TradeType
-} from '@uniswap/sdk-core';
+} from 'pnc-sdk-core';
 import {
   MixedRouteWithValidQuote,
   parseAmount,

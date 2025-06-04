@@ -1,4 +1,4 @@
-import { ChainId, Token, WETH9 } from '@uniswap/sdk-core';
+import { ChainId, Token, WETH9 } from 'pnc-sdk-core';
 import NodeCache from 'node-cache';
 import sinon from 'sinon';
 import {

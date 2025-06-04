@@ -4,7 +4,8 @@ import {
   Ether,
   NativeCurrency,
   Token,
-} from '@uniswap/sdk-core';
+} from 'pnc-sdk-core';
+import { PNCChain } from '../config';
 
 // WIP: Gnosis, Moonbeam
 export const SUPPORTED_CHAINS: ChainId[] = [
@@ -33,6 +34,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.BASE_SEPOLIA,
   ChainId.SONEIUM,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
+  PNCChain.chainId
 ];
 
 export const V2_SUPPORTED = [
@@ -167,6 +169,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.UNICHAIN;
     case 1868:
       return ChainId.SONEIUM;
+    case 31580102030:
+      return ChainId.PNC;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -201,6 +205,7 @@ export enum ChainName {
   UNICHAIN = 'unichain-mainnet',
   MONAD_TESTNET = 'monad-testnet',
   SONEIUM = 'soneium-mainnet',
+  PNC = 'pnc-mainnet',
 }
 
 export enum NativeCurrencyName {
@@ -213,6 +218,7 @@ export enum NativeCurrencyName {
   BNB = 'BNB',
   AVALANCHE = 'AVAX',
   MONAD = 'MON',
+  PNC = 'PNC',
 }
 
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
@@ -326,6 +332,11 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     'ETHER',
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
   ],
+  [ChainId.PNC]: [
+    'PNC',
+    'PNC',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
 };
 
 export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
@@ -356,6 +367,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.BASE_SEPOLIA]: NativeCurrencyName.ETHER,
   [ChainId.UNICHAIN]: NativeCurrencyName.ETHER,
   [ChainId.SONEIUM]: NativeCurrencyName.ETHER,
+  [ChainId.PNC]: NativeCurrencyName.PNC,
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -416,6 +428,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.MONAD_TESTNET;
     case 1868:
       return ChainName.SONEIUM;
+    case 31580102030:
+      return ChainName.PNC;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -477,6 +491,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_UNICHAIN!;
     case ChainId.SONEIUM:
       return process.env.JSON_RPC_PROVIDER_SONEIUM!;
+    case ChainId.PNC:
+      return process.env.JSON_RPC_PROVIDER_PNC!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -694,6 +710,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     18,
     'WETH',
     'Wrapped Ether'
+  ),
+  [ChainId.PNC]: new Token(
+    ChainId.PNC,
+    PNCChain.wrappedNativeCurrency.address,
+    18,
+    'WPNC',
+    'Wrapped PNC'
   ),
 };
 

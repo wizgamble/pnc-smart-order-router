@@ -14,7 +14,7 @@ import {
   Fraction,
   Token,
   TradeType,
-} from '@uniswap/sdk-core';
+} from 'pnc-sdk-core';
 import { TokenList } from '@uniswap/token-lists';
 import { UniversalRouterVersion } from '@uniswap/universal-router-sdk';
 import { Pair as V2Pool } from '@uniswap/v2-sdk';

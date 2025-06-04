@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from 'pnc-sdk-core';
 import _ from 'lodash';
 
 import { log, WRAPPED_NATIVE_CURRENCY } from '../util';
@@ -10,6 +10,7 @@ import {
   CELO,
   CELO_ALFAJORES,
   CEUR_CELO,
+  CNYT_PNC,
   CUSD_CELO,
   CUSD_CELO_ALFAJORES,
   DAI_ARBITRUM,
@@ -26,6 +27,7 @@ import {
   DAI_POLYGON_MUMBAI,
   DAI_UNICHAIN,
   ETH_BNB,
+  FLCT_PNC,
   ITokenProvider,
   TokenAccessor,
   USDB_BLAST,
@@ -47,6 +49,7 @@ import {
   USDC_SONEIUM,
   USDC_UNICHAIN,
   USDC_WORLDCHAIN,
+  USDK_PNC,
   USDT_ARBITRUM,
   USDT_BNB,
   USDT_MAINNET,
@@ -205,6 +208,12 @@ export const CACHE_SEED_TOKENS: {
   [ChainId.SONEIUM]: {
     USDC: USDC_SONEIUM,
     WETH: WRAPPED_NATIVE_CURRENCY[ChainId.SONEIUM],
+  },
+  [ChainId.PNC]: {
+    WPNC: WRAPPED_NATIVE_CURRENCY[ChainId.PNC],
+    FLCT: FLCT_PNC,
+    CNYT: CNYT_PNC,
+    USDK: USDK_PNC,
   },
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet
 };

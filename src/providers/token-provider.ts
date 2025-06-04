@@ -1,7 +1,7 @@
 import { Interface } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseBytes32String } from '@ethersproject/strings';
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from 'pnc-sdk-core';
 import _ from 'lodash';
 
 import { IERC20Metadata__factory } from '../types/v3/factories/IERC20Metadata__factory';
@@ -9,6 +9,7 @@ import { log, WRAPPED_NATIVE_CURRENCY } from '../util';
 
 import { IMulticallProvider, Result } from './multicall-provider';
 import { ProviderConfig } from './provider';
+import { PNCChain } from '../config';
 
 /**
  * Provider for getting token data.
@@ -805,6 +806,30 @@ export const USDC_SONEIUM = new Token(
   'Soneium Bridged USDC Soneium'
 );
 
+export const FLCT_PNC = new Token(
+  ChainId.PNC,
+  PNCChain.tokens.FLCT,
+  5,
+  'FLCT',
+  'FLCT'
+);
+
+export const CNYT_PNC = new Token(
+  ChainId.PNC,
+  PNCChain.tokens.CNYT,
+  5,
+  'CNYT',
+  'CNYT'
+);
+
+export const USDK_PNC = new Token(
+  ChainId.PNC,
+  PNCChain.tokens.USDK,
+  5,
+  'USDK',
+  'USDK'
+);
+
 export class TokenProvider implements ITokenProvider {
   constructor(
     private chainId: ChainId,
@@ -1116,6 +1141,8 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_UNICHAIN;
     case ChainId.SONEIUM:
       return USDC_SONEIUM;
+    case ChainId.PNC:
+      return USDK_PNC;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }

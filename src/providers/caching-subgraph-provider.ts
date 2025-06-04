@@ -1,5 +1,5 @@
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Currency, Token } from '@uniswap/sdk-core';
+import { ChainId, Currency, Token } from 'pnc-sdk-core';
 
 import { SubgraphPool } from '../routers/alpha-router/functions/get-candidate-pools';
 import { nativeOnChain, WRAPPED_NATIVE_CURRENCY } from '../util';
@@ -12,6 +12,7 @@ import {
   BUSD_BNB,
   CELO,
   CEUR_CELO,
+  CNYT_PNC,
   CUSD_CELO,
   DAI_ARBITRUM,
   DAI_AVAX,
@@ -22,6 +23,7 @@ import {
   DAI_OPTIMISM,
   DAI_UNICHAIN,
   ETH_BNB,
+  FLCT_PNC,
   OP_OPTIMISM,
   USDB_BLAST,
   USDCE_ZKSYNC,
@@ -40,6 +42,7 @@ import {
   USDC_UNICHAIN_SEPOLIA,
   USDC_WORLDCHAIN,
   USDC_ZKSYNC,
+  USDK_PNC,
   USDT_ARBITRUM,
   USDT_BNB,
   USDT_MAINNET,
@@ -185,6 +188,13 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     nativeOnChain(ChainId.SONEIUM),
     WRAPPED_NATIVE_CURRENCY[ChainId.SONEIUM]!,
     USDC_SONEIUM,
+  ],
+  [ChainId.PNC]: [
+    nativeOnChain(ChainId.PNC),
+    WRAPPED_NATIVE_CURRENCY[ChainId.PNC]!,
+    USDK_PNC,
+    CNYT_PNC,
+    FLCT_PNC,
   ],
 };
 

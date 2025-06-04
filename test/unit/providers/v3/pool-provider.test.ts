@@ -6,7 +6,7 @@ import {
   V3PoolProvider,
   WRAPPED_NATIVE_CURRENCY,
 } from '../../../../src';
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from 'pnc-sdk-core';
 import { JsonRpcProvider } from '@ethersproject/providers';
 import { FeeAmount } from '@uniswap/v3-sdk';
 

@@ -1,4 +1,4 @@
-import { ChainId } from '@uniswap/sdk-core';
+import { ChainId } from 'pnc-sdk-core';
 
 import {
   BatchParams,
@@ -51,7 +51,7 @@ export function constructSameBatchParamsMap<T extends BatchParams>(
 
 export const DEFAULT_BATCH_PARAMS: BatchParams = {
   multicallChunk: 210,
-  gasLimitPerCall: 705_000,
+  gasLimitPerCall: 1_500_000,
   quoteMinSuccessRate: 0.15,
 };
 
@@ -111,7 +111,7 @@ export function constructSameSuccessRateFailureOverridesMap<
 }
 
 export const DEFAULT_SUCCESS_RATE_FAILURE_OVERRIDES: FailureOverrides = {
-  gasLimitOverride: 1_300_000,
+  gasLimitOverride: 2_000_000,
   multicallChunk: 110,
 };
 

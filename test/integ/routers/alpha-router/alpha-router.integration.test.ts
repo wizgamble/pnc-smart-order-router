@@ -19,7 +19,7 @@ import {
   Rounding,
   Token,
   TradeType
-} from '@uniswap/sdk-core';
+} from 'pnc-sdk-core';
 import {
   UNIVERSAL_ROUTER_ADDRESS as UNIVERSAL_ROUTER_ADDRESS_BY_CHAIN,
   UniversalRouterVersion

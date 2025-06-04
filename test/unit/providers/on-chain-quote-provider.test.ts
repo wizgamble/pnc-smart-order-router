@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from 'pnc-sdk-core';
 import {
   CurrencyAmount,
   ID_TO_PROVIDER,

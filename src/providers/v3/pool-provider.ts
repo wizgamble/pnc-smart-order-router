@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from 'pnc-sdk-core';
 import { computePoolAddress, FeeAmount, Pool } from '@uniswap/v3-sdk';
 import retry, { Options as RetryOptions } from 'async-retry';
 
@@ -9,6 +9,7 @@ import { log } from '../../util/log';
 import { IMulticallProvider, Result } from '../multicall-provider';
 import { ILiquidity, ISlot0, PoolProvider } from '../pool-provider';
 import { ProviderConfig } from '../provider';
+import { PNCChain } from '../../config';
 
 type V3ISlot0 = ISlot0 & {
   sqrtPriceX96: BigNumber;
@@ -178,7 +179,7 @@ export class V3PoolProvider
       tokenA: token0,
       tokenB: token1,
       fee: feeAmount,
-      initCodeHashManualOverride: undefined,
+      initCodeHashManualOverride: PNCChain.initCodeHash,
       chainId: this.chainId,
     });
 

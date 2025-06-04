@@ -4,7 +4,7 @@ import {
   ChainId,
   Currency,
   CurrencyAmount as CurrencyAmountRaw,
-} from '@uniswap/sdk-core';
+} from 'pnc-sdk-core';
 import { FeeAmount, TICK_SPACINGS } from '@uniswap/v3-sdk';
 import JSBI from 'jsbi';
 

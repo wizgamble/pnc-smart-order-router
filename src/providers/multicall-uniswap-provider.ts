@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { BaseProvider } from '@ethersproject/providers';
-import { ChainId } from '@uniswap/sdk-core';
+import { ChainId } from 'pnc-sdk-core';
 import _ from 'lodash';
 import stats from 'stats-lite';
 
@@ -176,6 +176,8 @@ export class UniswapMulticallProvider extends IMulticallProvider<UniswapMultical
       `About to multicall for ${functionName} at address ${address} with ${functionParams.length} different sets of params`
     );
 
+    console.log(calls[0]?.callData)
+
     const { blockNumber, returnData: aggregateResults } =
       await this.multicallContract.callStatic.multicall(calls, {
         blockTag: blockNumberOverride,
@@ -264,6 +266,8 @@ export class UniswapMulticallProvider extends IMulticallProvider<UniswapMultical
       { calls },
       `About to multicall for ${functionNames.length} functions at address ${address} with ${functionParams?.length} different sets of params`
     );
+
+    console.log(calls[0]?.callData)
 
     const { blockNumber, returnData: aggregateResults } =
       await this.multicallContract.callStatic.multicall(calls, {

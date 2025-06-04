@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from 'pnc-sdk-core';
 import { Pair } from '@uniswap/v2-sdk';
 import _ from 'lodash';
 
@@ -10,6 +10,7 @@ import {
   BUSD_BNB,
   CELO,
   CEUR_CELO,
+  CNYT_PNC,
   CUSD_CELO,
   DAI_ARBITRUM,
   DAI_AVAX,
@@ -19,6 +20,7 @@ import {
   DAI_MOONBEAM,
   DAI_OPTIMISM,
   DAI_UNICHAIN,
+  FLCT_PNC,
   ETH_BNB,
   OP_OPTIMISM,
   USDB_BLAST,
@@ -38,6 +40,7 @@ import {
   USDC_UNICHAIN_SEPOLIA,
   USDC_WORLDCHAIN,
   USDC_ZKSYNC,
+  USDK_PNC,
   USDT_ARBITRUM,
   USDT_BNB,
   USDT_MAINNET,
@@ -153,6 +156,12 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     USDC_BASE_SEPOLIA,
   ],
   [ChainId.SONEIUM]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONEIUM]!, USDC_SONEIUM],
+  [ChainId.PNC]: [
+    WRAPPED_NATIVE_CURRENCY[ChainId.PNC]!,
+    USDK_PNC,
+    CNYT_PNC,
+    FLCT_PNC,
+  ]
 };
 
 /**

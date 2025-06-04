@@ -1,0 +1,32 @@
+export const PNCChain = {
+  name: 'PNC',
+  rpcUrl: 'http://43.156.127.203:32003',
+  chainId: 31580102030,
+  nativeCurrency: {
+    name: 'PNC',
+    symbol: 'PNC',
+    decimals: 18,
+  },
+  wrappedNativeCurrency: {
+    name: 'Wrapped PNC',
+    symbol: 'WPNC',
+    decimals: 18,
+    address: '0xBddb1A0f310dD9303f10cCf244ce5f6a1211F065',
+  },
+  v3CoreFactoryAddress: '0x41A0D2Ddb435A5B149BeA7582Bb64D1689eb4c98',
+  multicallAddress: '0xb581927E176E05404839a0a28c745D8d7F8fda55',
+  quoterAddress: '0x6e7979fD6D025dA3192637a58bdD206C8268FEeA',
+  nftDescriptorAddress: '0x517B6bC20E682f395e40a4854e4360bd4fBcD19a',
+  positionDescriptorAddress: '0x54712b9Ad7D8414Dd0A1f4dBFAe831B400DcE282',
+  positionManagerAddress: '0x80d0fB2bE8E23052518bA68f507D167EEECfe167',
+  swapRouterAddress: '0x0838267A0083ADcc8855c143627A66dC7f9CC1a8',
+  v3MigratorAddress: '0xa42276Cc99153b0c1CdbD16A46c4ee80698E84CA',
+  permit2RouterAddress: '0x1b793E7eDdD8D2447951e3Df58A28745516c2dFe',
+  universalRouterAddress: '0x922333bCce3DF41486f618c478565b98c8D55248',
+  initCodeHash: '0xd3e7f58b9af034cfa7a0597e539bae7c6b393817a47a6fc1e1503cd6eaffe22a',
+  tokens: {
+    FLCT: '0x1929D77aA7AcdC3E2624BfaBc7f94A4593C858e0',
+    CNYT: '0x82f74Fd9F2e4A8b23CC2C6E67E39049216DdCD42',
+    USDK: '0x2ab0F4D16004B4E5766F77AEa56952aB5751698C',
+  },
+};

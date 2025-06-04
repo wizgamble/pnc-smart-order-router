@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Currency, TradeType } from '@uniswap/sdk-core';
+import { ChainId, Currency, TradeType } from 'pnc-sdk-core';
 import _ from 'lodash';
 
 import {

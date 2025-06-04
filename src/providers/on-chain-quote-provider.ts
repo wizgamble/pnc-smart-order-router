@@ -7,7 +7,7 @@ import {
   MixedRouteSDK,
   Protocol,
 } from '@uniswap/router-sdk';
-import { ChainId } from '@uniswap/sdk-core';
+import { ChainId } from 'pnc-sdk-core';
 import { encodeRouteToPath as encodeV3RouteToPath } from '@uniswap/v3-sdk';
 import {
   encodeRouteToPath as encodeV4RouteToPath,
@@ -621,6 +621,8 @@ export class OnChainQuoteProvider implements IOnChainQuoteProvider {
     functionName: 'quoteExactInput' | 'quoteExactOutput',
     _providerConfig?: ProviderConfig
   ): Promise<OnChainQuotes<TRoute>> {
+    console.log('routes', routes);
+    console.log('pools', routes.map((route: any) => route.pools));
     const useMixedRouteQuoter =
       routes.some((route) => route.protocol === Protocol.V2) ||
       routes.some((route) => route.protocol === Protocol.MIXED);

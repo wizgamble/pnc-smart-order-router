@@ -12,7 +12,7 @@ import {
   Percent,
   Token,
   TradeType,
-} from '@uniswap/sdk-core';
+} from 'pnc-sdk-core';
 import {
   SwapOptions as UniversalRouterSwapOptions,
   UniversalRouterVersion,
