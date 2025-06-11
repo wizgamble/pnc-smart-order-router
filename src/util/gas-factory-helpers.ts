@@ -140,12 +140,13 @@ export async function getHighestLiquidityV3USDPool(
     .value();
 
   const poolAccessor = await poolProvider.getPools(usdPools, providerConfig);
-
+  
   const pools = _(feeAmounts)
     .flatMap((feeAmount) => {
       const pools = [];
 
       for (const usdToken of usdTokens) {
+        console.log(wrappedCurrency.address, usdToken.address, feeAmount);
         const pool = poolAccessor.getPool(wrappedCurrency, usdToken, feeAmount);
         if (pool) {
           pools.push(pool);
